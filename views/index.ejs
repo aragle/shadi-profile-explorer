@@ -1,0 +1,31 @@
+<!-- FILEPATH: /C:/Users/Mariana/Desktop/shadi/index.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shaadi.com Profile Template</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./app.js"></script>
+  </head>
+  <body>
+      <table id="table" border="1" style="border-collapse: collapse;" width="80%">   
+           <tbody>  
+           <% users.forEach(function (user) { %>
+
+            <% var name = user.first_name + " " + user.last_name %>
+            <% var photo = "https://www.shadi.com/imagehandler.php?f=" + user.photo + "&t=2" %>
+            <% var profile = "https://www.shadi.com/profile/sh000" + user.user_id + ".htm" %>
+
+              <tr> 
+                  <td><img height="200" src="<%= photo %>"/></td>
+                  <td><a href=<%= profile %>><%= user.screen_name %></a></td>
+                  <td><%= name %></td>
+                  <td><%= user.religion %></td>
+              </tr>                                   
+           <% }) %>
+           </tbody>
+      </table>   
+  
+  </html>
+  </body>
+</html>
